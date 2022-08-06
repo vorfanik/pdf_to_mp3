@@ -2,9 +2,10 @@ from gtts import gTTS
 import pdfplumber
 from pathlib import Path
 
+
 def pdf_to_mp3(pdf_path):
 
-    if Path(pdf_path).is_file() and Path(pdf_path).suffix=='.pdf':
+    if Path(pdf_path).is_file() and Path(pdf_path).suffix == '.pdf':
 
         print('Processing...')
 
@@ -17,14 +18,16 @@ def pdf_to_mp3(pdf_path):
         mp3_name = Path(pdf_path).stem
         mp3.save(f'{mp3_name}.mp3')
 
-        return f'{mp3_name}.mp3 saved succesfully!'
+        return f'{mp3_name}.mp3 saved successfully!'
 
     else:
         return 'File NOT exist'
 
+
 def main():
     pdf_patch = input("Enter a pdf's path (only eng): \n")
     print(pdf_to_mp3(pdf_patch))
+
 
 if __name__ == '__main__':
     main()
